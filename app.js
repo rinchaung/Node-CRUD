@@ -8,13 +8,13 @@ const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT;
-const DB_URL = process.env.DB_URL;
+const DB_URL = 'mongodb://user:user@ac-vnb30rw-shard-00-00.g6j7osv.mongodb.net:27017,ac-vnb30rw-shard-00-01.g6j7osv.mongodb.net:27017,ac-vnb30rw-shard-00-02.g6j7osv.mongodb.net:27017/node-crud?ssl=true&replicaSet=atlas-tu63wf-shard-0&authSource=admin&retryWrites=true&w=majority'
 
 mongoose.connect(DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then( () => {
-    console.log(`DB is connnected at ${DB_URL}`);
+    console.log(`DB is connnected...`);
 });
 
 app.use(expressLayouts);
